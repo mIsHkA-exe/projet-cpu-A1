@@ -1,5 +1,48 @@
 # Simulateur de Processeur 16 bits en C
 
+<p align="center">
+  <img src="https://img.shields.io/badge/C-Programming%20Language-A8B9CC?style=for-the-badge&logo=c&logoColor=white" alt="C">
+  <img src="https://img.shields.io/badge/Visual%20Studio%20Code-IDE-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="Visual Studio Code">
+</p>
+
+<p align="center">
+  <strong>Simulateur de processeur 16 bits développé en langage C</strong><br>
+  Architecture Von Neumann · Pipeline 4 étages · Gestion des Hazards
+</p>
+
+---
+
+## Table des matières
+
+* [Présentation](#présentation)
+* [Objectifs du projet](#objectifs-du-projet)
+* [Architecture](#architecture)
+
+  * [Composants principaux](#composants-principaux)
+* [Pipeline](#pipeline)
+
+  * [1. FETCH](#1-fetch)
+  * [2. DECODE](#2-decode)
+  * [3. EXECUTE](#3-execute)
+  * [4. MEMORY / WRITE-BACK](#4-memory--write-back)
+* [Jeu d'instructions](#jeu-dinstructions)
+* [Gestion des aléas](#gestion-des-aléas)
+
+  * [Structural Hazards](#structural-hazards)
+  * [Data Hazards](#data-hazards)
+* [Fonctionnement du simulateur](#fonctionnement-du-simulateur)
+* [Programme de test](#programme-de-test)
+* [Résultats](#résultats)
+* [Technologies utilisées](#technologies-utilisées)
+* [Compétences développées](#compétences-développées)
+* [Organisation du projet](#organisation-du-projet)
+* [Compilation](#compilation)
+* [Exemple de sortie](#exemple-de-sortie)
+* [Auteurs](#auteurs)
+* [Contexte académique](#contexte-académique)
+
+---
+
 ## Présentation
 
 Projet académique réalisé dans le cadre du cours d'**Architecture des ordinateurs**.
@@ -42,7 +85,7 @@ Les principaux objectifs sont :
 
 ## Architecture
 
-Le processeur repose sur une architecture **Von Neumann pipelinée**. Les instructions et les données sont stockées dans une mémoire commune, ce qui permet de simplifier la structure générale du système.
+Le processeur repose sur une architecture **Von Neumann pipelinée**.
 
 ### Composants principaux
 
@@ -57,8 +100,6 @@ Le processeur repose sur une architecture **Von Neumann pipelinée**. Les instru
 | regE      | Registre inter-étage Execute                         |
 | regM      | Registre inter-étage Memory                          |
 | Pipeline  | Exécution simultanée de plusieurs instructions       |
-
-Le banc de registres contient quatre registres de travail de 16 bits : **R0, R1, R2 et R3**. Le PC conserve l'adresse de la prochaine instruction à exécuter.
 
 ---
 
@@ -138,8 +179,6 @@ Le simulateur implémente un ensemble réduit d'instructions :
 | `JMP`       | Modifier le flux d'exécution         |
 | `NOP`       | Ne réaliser aucune opération         |
 | `HALT`      | Arrêter le processeur                |
-
-Ce jeu d'instructions constitue l'ISA simplifiée utilisée par le simulateur.
 
 ---
 
@@ -245,7 +284,13 @@ Ces valeurs permettent de vérifier que les opérations arithmétiques, le trans
 
 ## Technologies utilisées
 
+<p align="center">
+  <img src="https://img.shields.io/badge/C-Programming%20Language-A8B9CC?style=for-the-badge&logo=c&logoColor=white" alt="C">
+  <img src="https://img.shields.io/badge/Visual%20Studio%20Code-IDE-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="Visual Studio Code">
+</p>
+
 * **Langage :** C
+* **IDE :** Visual Studio Code
 * **Architecture :** Von Neumann
 * **Architecture d'exécution :** Pipeline 4 étages
 * **Mémoire :** RAM simulée de 32 cases
@@ -290,7 +335,7 @@ Ces valeurs permettent de vérifier que les opérations arithmétiques, le trans
 
 ---
 
-## Organisation possible du projet
+## Organisation du projet
 
 ```text
 .
